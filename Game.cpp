@@ -40,6 +40,11 @@ sf::RenderWindow& Game::GetWindow()
 	return _mainWindow;
 }
 
+const GameObjectManager& Game::GetGameObjectManager()
+{
+	return Game::_gameObjectManager;
+}
+
 bool Game::IsExiting()
 {
 	if (_gameState == Game::Exiting)
@@ -51,8 +56,7 @@ bool Game::IsExiting()
 void Game::GameLoop()
 {
 	sf::Event currentEvent;
-	while (_mainWindow.pollEvent(currentEvent))
-	{
+	_mainWindow.pollEvent(currentEvent);
 
 		switch (_gameState)
 		{
@@ -69,7 +73,7 @@ void Game::GameLoop()
 		case Game::Playing:
 		{
 			_mainWindow.clear(sf::Color(255, 0, 0));
-
+			_gameObjectManager.updateAll();
 			_gameObjectManager.drawAll(_mainWindow);
 
 			_mainWindow.display();
@@ -82,7 +86,6 @@ void Game::GameLoop()
 					ShowMenu();
 			}
 			break;
-		}
 		}
 	}
 }

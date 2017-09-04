@@ -1,0 +1,5 @@
+﻿  GameBall.cpp
+c:\users\40174030\documents\pang\gameball.cpp(14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\40174030\documents\pang\gameball.cpp(100): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Pang.vcxproj -> C:\Users\40174030\Documents\Pang\Debug\Pang.exe
+  Pang.vcxproj -> C:\Users\40174030\Documents\Pang\Debug\Pang.pdb (Partial PDB)

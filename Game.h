@@ -11,6 +11,8 @@ public:
 	static void Start();
 	const static sf::Event& GetInput();
 	static sf::RenderWindow& GetWindow();
+	const static GameObjectManager& GetGameObjectManager();
+
 	const static int SCREEN_WIDTH = 1024;
 	const static int SCREEN_HEIGHT = 768;
 
