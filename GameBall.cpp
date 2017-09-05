@@ -52,38 +52,38 @@ void GameBall::Update(float elapsedTime)
 	if (player1 != NULL)
 	{
 		sf::FloatRect p1BB = player1->getBoundingRect();
-		if (p1BB.intersects(getBoundingRect()))
-		{
-			_angle = 360.0f - (_angle - 180.0f);
-			if (_angle > 360.0f) 
-				_angle -= 360.0f;
-			moveByY = -moveByY;
+		//if (p1BB.intersects(getBoundingRect()))
+		//{
+		//	_angle = 360.0f - (_angle - 180.0f);
+		//	if (_angle > 360.0f) 
+		//		_angle -= 360.0f;
+		//	moveByY = -moveByY;
 
-			// Make sure ball isn't inside paddle
-			if (getBoundingRect().height > player1->getBoundingRect().top)
-			{
-				setPosition(getPosition().x, player1->getBoundingRect().top - getWidth() / 2 - 1);
-			}
+		//	// Make sure ball isn't inside paddle
+		//	if (getBoundingRect().height > player1->getBoundingRect().top)
+		//	{
+		//		setPosition(getPosition().x, player1->getBoundingRect().top - getWidth() / 2 - 1);
+		//	}
 
-			// Now add "English" based on the players velocity.  
-			float playerVelocity = player1->getVelocity();
+		//	// Now add "English" based on the players velocity.  
+		//	float playerVelocity = player1->getVelocity();
 
-			if (playerVelocity < 0)
-			{
-				// Moving left
-				_angle -= 20.0f;
-				if (_angle < 0) 
-					_angle = 360.0f - _angle;
-			}
-			else if (playerVelocity > 0)
-			{
-				_angle += 20.0f;
-				if (_angle > 360.0f) 
-					_angle = _angle - 360.0f;
-			}
+		//	if (playerVelocity < 0)
+		//	{
+		//		// Moving left
+		//		_angle -= 20.0f;
+		//		if (_angle < 0) 
+		//			_angle = 360.0f - _angle;
+		//	}
+		//	else if (playerVelocity > 0)
+		//	{
+		//		_angle += 20.0f;
+		//		if (_angle > 360.0f) 
+		//			_angle = _angle - 360.0f;
+		//	}
 
-			_velocity += 5.0f;
-		}
+		//	_velocity += 5.0f;
+		//}
 
 		if (getPosition().y - getHeight() / 2 <= 0)
 		{
@@ -101,7 +101,6 @@ void GameBall::Update(float elapsedTime)
 			_velocity = 220.0f;
 			_elapsedTimeSinceStart = 0.0f;
 		}
-
 		getSprite().move(moveByX, moveByY);
 	}
 }
