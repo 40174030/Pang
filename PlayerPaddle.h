@@ -9,6 +9,7 @@ public:
 
 	void Update(float elapsedTime);
 	void Draw(sf::RenderWindow& rw);
+	void Reset();
 
 	float getVelocity() const;
 

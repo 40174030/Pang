@@ -18,6 +18,9 @@ public:
 
 	virtual sf::FloatRect getBoundingRect() const;
 
+	virtual void Reset();
+
+
 protected:
 	sf::Sprite& getSprite();
 

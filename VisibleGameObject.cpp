@@ -30,6 +30,8 @@ void VisibleGameObject::Draw(sf::RenderWindow& renderWindow)
 
 void VisibleGameObject::Update(float elapsedTime) {}
 
+void VisibleGameObject::Reset() {}
+
 void VisibleGameObject::setPosition(float x, float y)
 {
 	if (_isLoaded)
@@ -69,11 +71,5 @@ float VisibleGameObject::getWidth() const
 
 sf::FloatRect VisibleGameObject::getBoundingRect() const
 {
-	sf::FloatRect size = _sprite.getLocalBounds();
-	sf::Vector2f position = _sprite.getPosition();
-
-	return sf::FloatRect(position.x - size.width / 2, 
-						 position.y - size.height / 2, 
-						 position.x + size.width / 2, 
-						 position.y + size.height / 2);
+	return _sprite.getGlobalBounds();
 }

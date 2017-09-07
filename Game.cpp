@@ -11,10 +11,8 @@ void Game::Start()
 	_mainWindow.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32), "Pang!");
 
 	PlayerPaddle* player1 = new PlayerPaddle();
-	player1->setPosition((SCREEN_WIDTH / 2) - 45, 700);
 
 	GameBall* ball = new GameBall();
-	ball->setPosition((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2) - 15);
 
 	_gameObjectManager.Add("Paddle1", player1);
 	_gameObjectManager.Add("Ball", ball);
@@ -101,6 +99,7 @@ void Game::ShowMenu()
 {
 	MainMenu mainMenu;
 	MainMenu::MenuResult result = mainMenu.Show(_mainWindow);
+
 	switch (result)
 	{
 	case MainMenu::Exit:

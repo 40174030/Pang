@@ -58,3 +58,13 @@ void GameObjectManager::updateAll()
 		itr++;
 	}
 }
+
+void GameObjectManager::resetAll()
+{
+	std::map<std::string, VisibleGameObject*>::const_iterator itr = _gameObjects.begin();
+	while (itr != _gameObjects.end())
+	{
+		itr->second->Reset();
+		itr++;
+	}
+}

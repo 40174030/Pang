@@ -7,6 +7,7 @@ public:
 	GameBall();
 	virtual ~GameBall();
 	void Update(float);
+	void Reset();
 
 private:
 	float _velocity;

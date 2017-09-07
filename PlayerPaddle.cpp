@@ -8,6 +8,7 @@ PlayerPaddle::PlayerPaddle() : _velocity(0), _maxVelocity(600.0f)
 	assert(isLoaded());
 
 	getSprite().setOrigin(getSprite().getLocalBounds().width / 2, getSprite().getLocalBounds().height / 2);
+	setPosition((SCREEN_WIDTH / 2) - 45, 700);
 }
 
 PlayerPaddle::~PlayerPaddle() {}
@@ -15,6 +16,11 @@ PlayerPaddle::~PlayerPaddle() {}
 void PlayerPaddle::Draw(sf::RenderWindow& rw)
 {
 	VisibleGameObject::Draw(rw);
+}
+
+void PlayerPaddle::Reset()
+{
+	
 }
 
 float PlayerPaddle::getVelocity() const
