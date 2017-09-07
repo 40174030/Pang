@@ -16,6 +16,8 @@ public:
 	void updateAll();
 	void resetAll();
 
+	sf::Clock& getClock();
+
 private:
 	std::map<std::string, VisibleGameObject*> _gameObjects;
 

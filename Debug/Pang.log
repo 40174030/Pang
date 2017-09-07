@@ -1,5 +1,4 @@
-﻿  GameBall.cpp
-c:\users\jack yorston\documents\visual studio 2015\projects\pang\gameball.cpp(14): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-c:\users\jack yorston\documents\visual studio 2015\projects\pang\gameball.cpp(102): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Pang.vcxproj -> C:\Users\Jack Yorston\Documents\Visual Studio 2015\Projects\Pang\Debug\Pang.exe
-  Pang.vcxproj -> C:\Users\Jack Yorston\Documents\Visual Studio 2015\Projects\Pang\Debug\Pang.pdb (Partial PDB)
+﻿  Game.cpp
+c:\users\40174030\documents\pang\game.cpp(33): warning C4172: returning address of local variable or temporary: currentEvent
+  Pang.vcxproj -> C:\Users\40174030\Documents\Pang\Debug\Pang.exe
+  Pang.vcxproj -> C:\Users\40174030\Documents\Pang\Debug\Pang.pdb (Partial PDB)

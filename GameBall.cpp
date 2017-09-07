@@ -10,7 +10,7 @@ GameBall::GameBall() :
 	assert(isLoaded());
 
 	getSprite().setOrigin(15, 15);
-	setPosition((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2) - 15);
+	setPosition((Game::SCREEN_WIDTH / 2), (Game::SCREEN_HEIGHT / 2) - 15);
 
 	float random_integer = std::rand() % 360 + 1; // Gives random number between 1 and 360.
 	_angle = random_integer;
@@ -85,7 +85,7 @@ void GameBall::Update(float elapsedTime)
 					_angle = _angle - 360.0f;
 			}
 
-			_velocity += 5.0f;
+			_velocity += 2.0f;
 		}
 
 		// Ball reaches top of screen

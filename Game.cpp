@@ -58,18 +58,20 @@ void Game::GameLoop()
 
 		switch (_gameState)
 		{
-		case Game::ShowingMenu:
-		{
-			ShowMenu();
-			break;
-		}
 		case Game::ShowingSplash:
 		{
 			ShowSplashScreen();
 			break;
 		}
+		case Game::ShowingMenu:
+		{
+			ShowMenu();
+			_gameObjectManager.resetAll();
+			break;
+		}
 		case Game::Playing:
 		{
+
 			_mainWindow.clear(sf::Color(255, 0, 0));
 			_gameObjectManager.updateAll();
 			_gameObjectManager.drawAll(_mainWindow);
@@ -81,7 +83,7 @@ void Game::GameLoop()
 			if (currentEvent.type == sf::Event::KeyPressed)
 			{
 				if (currentEvent.key.code == sf::Keyboard::Escape)
-					ShowMenu();
+					_gameState = Game::ShowingMenu;
 			}
 			break;
 		}
@@ -99,6 +101,7 @@ void Game::ShowMenu()
 {
 	MainMenu mainMenu;
 	MainMenu::MenuResult result = mainMenu.Show(_mainWindow);
+	_gameObjectManager.getClock().restart();
 
 	switch (result)
 	{

@@ -68,3 +68,8 @@ void GameObjectManager::resetAll()
 		itr++;
 	}
 }
+
+sf::Clock& GameObjectManager::getClock()
+{
+	return clock;
+}
